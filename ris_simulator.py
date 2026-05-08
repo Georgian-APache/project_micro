@@ -432,7 +432,7 @@ class BERTab(QWidget):
         self._c_gain.set("--"); self._c_gap.set("--")
 
         self._p = dict(
-            snr_arr=np.arange(-10, 22, 2, dtype=float),
+            snr_arr=np.arange(-36, 22, 3, dtype=float),
             elev=self.s_elev.value(), N=self.s_N.value(),
             n_mc=self.s_mc.value(), n_bits=self.s_bits.value(),
             sw=self.s_sw.value(), ni=self.s_it.value())
@@ -490,7 +490,7 @@ class BERTab(QWidget):
         self._ax.set_title(
             f"BER vs SNR  |  {elv}° Elevation  |  N = {N} RIS Elements",
             fontsize=13, fontweight="bold", pad=12)
-        self._ax.set_ylim([1e-5, 1])
+        self._ax.set_ylim([1e-6, 1])
         self._ax.set_xlim([snr[0], snr[-1]])
         self._ax.legend(fontsize=10, facecolor=_PANEL, edgecolor=_LINE,
                         labelcolor=_TEXT, loc="lower left", framealpha=0.95)
